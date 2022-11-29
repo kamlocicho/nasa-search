@@ -1,0 +1,19 @@
+<body>
+
+  <nav>
+    <h1>NASA Search</h1>
+
+    <div class="search-input">
+      <label for="search">Search: </label>
+      <input type="text" placeholder="Search images here" id="search" #box (keyup.enter)="onEnter(box.value)">
+    </div>
+  </nav>
+  
+    <div class="container">  
+      <ul *ngIf="images" id="photos">
+        <li *ngFor="let image of images.collection.items">
+          <img [src]="image.links[0].href" alt="">
+        </li>
+      </ul>
+    </div>
+</body>
